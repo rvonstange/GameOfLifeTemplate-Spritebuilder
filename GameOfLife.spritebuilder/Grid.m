@@ -15,8 +15,8 @@ static const int GRID_COLUMNS = 10;
 
 @implementation Grid {
     NSMutableArray *_gridArray;
-    CGFloat _cellWidth;
-    CGFloat _cellHeight;
+    float _cellWidth;
+    float _cellHeight;
 }
 
 - (void)onEnter
@@ -81,10 +81,9 @@ static const int GRID_COLUMNS = 10;
 - (Creature *)creatureForTouchPosition:(CGPoint)touchPosition
 {
     //get the row and column that was touched, return the Creature inside the corresponding cell
-    CGFloat rowF = touchPosition.y/_cellHeight;
-    int row = (int)floorf(rowF);
-    int column = (int) (touchPosition.x/_cellWidth);
-    return _gridArray[(int)row][column];
+    int row = (int)(touchPosition.y/_cellHeight);
+    int column = (int)(touchPosition.x/_cellWidth);
+    return _gridArray[row][column];
 }
 
 @end
