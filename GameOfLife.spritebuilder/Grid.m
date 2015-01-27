@@ -15,8 +15,8 @@ static const int GRID_COLUMNS = 10;
 
 @implementation Grid {
     NSMutableArray *_gridArray;
-    float _cellWidth;
-    float _cellHeight;
+    CGFloat _cellWidth;
+    CGFloat _cellHeight;
 }
 
 - (void)onEnter
