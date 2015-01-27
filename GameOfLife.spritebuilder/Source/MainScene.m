@@ -9,7 +9,7 @@
 #import "MainScene.h"
 #import "Grid.h"
 
-@implementation MainScene /*{
+@implementation MainScene {
     Grid *_grid;
     CCTimer *_timer;
     CCLabelTTF *_generationLabel;
@@ -44,6 +44,6 @@
     [_grid evolveStep];
     _generationLabel.string = [NSString stringWithFormat:@"%d", _grid.generation];
     _populationLabel.string = [NSString stringWithFormat:@"%d", _grid.totalAlive];
-}*/
+}
 
 @end
