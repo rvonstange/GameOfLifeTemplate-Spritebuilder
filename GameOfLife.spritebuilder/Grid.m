@@ -149,7 +149,7 @@ static const int GRID_COLUMNS = 10;
 }
 
 -(void)updateCreatures{
-    
+    int numAlive = 0;
     // iterate through the rows
     // note that NSArray has a method 'count' that will return the number of elements in the array
     for (int i = 0; i < [_gridArray count]; i++)
@@ -166,8 +166,12 @@ static const int GRID_COLUMNS = 10;
             else if ((currentCreature.livingNeighbors > 3)||(currentCreature.livingNeighbors < 2)){
                 currentCreature.isAlive = false;
             }
+            if (currentCreature.isAlive){
+                numAlive++;
+            }
         }
     }
+    _totalAlive = numAlive;
 }
 
 @end
